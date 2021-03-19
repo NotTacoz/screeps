@@ -1,3 +1,5 @@
+var SpawnName = "Spawn1"; // IMPORTANT Spawn Name
+
 // ALL BODY PARTS COST
 var MOVECOST = 50;
 var WORKCOST = 100;
@@ -7,17 +9,17 @@ var RANGED_ATTACKCOST = 150;
 var HEALCOST = 250;
 var TOUGHCOST = 10;
 var CLAIMCOST = 600;
+// TODO: Currently, there are no uses for body parts variables, but in the future I plan to make it so
+// that the code automatically determines how much body parts a creep needs.
 
-// ROLES
+// ROLES: Grabs other pieces of codes.
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var autoSpawn = require('autoSpawn');
 
-var SpawnName = "Spawn1";
-
-module.exports.loop = function() {
-    if (Game.cpu.bucket >= 100) {
+module.exports.loop = function() { // infinite loop wow
+    if (Game.cpu.bucket >= 100) { // if cpu bucket is more than 100: the minimum requirement for running the code, why? I dont know why are you asking me.
         // Infinite Pixels = Infinite Money!!!
         if (Game.cpu.bucket === 10000) { // if cpu bucket is full
             Game.cpu.generatePixel(); // generating pixel command
@@ -33,31 +35,32 @@ module.exports.loop = function() {
             }
         }
 
-        // spawning creeps auto
-        var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
-        var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-        var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+        // amazing auto spawning creeps totally origianl!!
+        var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester'); // gets all the harvesters
+        var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader'); // gets all the upgraders
+        var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder'); // gets all the builders
 
-        if (harvesters.length < 2) {
-            var newName = 'Harvester' + Game.time;
-            console.log('Spawning new harvester: ' + newName);
-            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'harvester' } });
+        if (harvesters.length < 2) { // if there are no more than 2 harvesters.
+            var newName = 'Harvester' + Game.time; // setting a completely original name for the creep
+            console.log('Spawning new harvester: ' + newName); // console logging for utility in general
+            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'harvester' } }); // spawns the creep
         }
-        if (upgraders.length < 2) {
-            var newName = 'Upgrader' + Game.time;
-            console.log('Spawning new upgrader: ' + newName);
-            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'upgrader' } });
+        if (upgraders.length < 2) { // if there are no more than 2 upgraders.
+            var newName = 'Upgrader' + Game.time; // setting a completely original name for the creep
+            console.log('Spawning new upgrader: ' + newName); // console logging for utility in general
+            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'upgrader' } }); // spawns the creep
         }
-        if (builders.length < 2) {
-            var newName = 'Builder' + Game.time;
-            console.log('Spawning new builder: ' + newName);
-            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'builder' } });
+        if (builders.length < 2) { // if there are no more than 2 builders.
+            var newName = 'Builder' + Game.time; // setting a completely original name for the creep
+            console.log('Spawning new builder: ' + newName); // console logging for utility in general
+            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'builder' } }); // spawns the creep
         }
 
-        if (Game.spawns['Spawn1'].spawning) {
-            var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name];
-            Game.spawns['Spawn1'].room.visual.text(
-                '🛠️' + spawningCreep.memory.role,
+        // spawning visual text
+        if (Game.spawns['Spawn1'].spawning) { // if Spawn1 is spawning anything
+            var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name]; // spawning creep name
+            Game.spawns['Spawn1'].room.visual.text( // creates a visual text
+                '🛠️' + spawningCreep.memory.role, // emoji for asthetics
                 Game.spawns['Spawn1'].pos.x + 1,
                 Game.spawns['Spawn1'].pos.y, { align: 'left', opacity: 0.8 });
         }
