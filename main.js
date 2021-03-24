@@ -16,7 +16,7 @@ var CLAIMCOST = 600;
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
-var autoSpawn = require('autoSpawn');
+var roleRepairer = require('role.repairer');
 
 module.exports.loop = function() { // infinite loop wow
     if (Game.cpu.bucket >= 100) { // if cpu bucket is more than 100: the minimum requirement for running the code, why? I dont know why are you asking me.
@@ -39,21 +39,27 @@ module.exports.loop = function() { // infinite loop wow
         var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester'); // gets all the harvesters
         var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader'); // gets all the upgraders
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder'); // gets all the builders
+        var repairers = _.filter(Game.creeps, (creep) => creep.memory.role == 'repairer'); // gets all the repairers
 
-        if (harvesters.length < 2) { // if there are no more than 2 harvesters.
+        if (harvesters.length < 4) { // if there are no more than 4 harvesters.
             var newName = 'Harvester' + Game.time; // setting a completely original name for the creep
-            console.log('Spawning new harvester: ' + newName); // console logging for utility in general
-            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'harvester' } }); // spawns the creep
+            //console.log('Spawning new harvester: ' + newName); // console logging for utility in general
+            Game.spawns['Spawn1'].spawnCreep([WORK, WORK, CARRY, CARRY, MOVE, MOVE], newName, { memory: { role: 'harvester' } }); // spawns the creep
         }
-        if (upgraders.length < 2) { // if there are no more than 2 upgraders.
+        if (upgraders.length < 4) { // if there are no more than 2 upgraders.
             var newName = 'Upgrader' + Game.time; // setting a completely original name for the creep
-            console.log('Spawning new upgrader: ' + newName); // console logging for utility in general
-            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'upgrader' } }); // spawns the creep
+            //console.log('Spawning new upgrader: ' + newName); // console logging for utility in general
+            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, CARRY, CARRY, MOVE], newName, { memory: { role: 'upgrader' } }); // spawns the creep
         }
-        if (builders.length < 2) { // if there are no more than 2 builders.
+        if (builders.length < 3) { // if there are no more than 3 builders.
             var newName = 'Builder' + Game.time; // setting a completely original name for the creep
-            console.log('Spawning new builder: ' + newName); // console logging for utility in general
-            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, { memory: { role: 'builder' } }); // spawns the creep
+            //console.log('Spawning new builder: ' + newName); // console logging for utility in general
+            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, CARRY, MOVE], newName, { memory: { role: 'builder' } }); // spawns the creep
+        }
+        if (repairers.length < 3) { // if there are no more than 2 repairers.
+            var newName = 'Repairer' + Game.time; // setting a completely original name for the creep
+            //console.log('Spawning new builder: ' + newName); // console logging for utility in general
+            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, CARRY, MOVE], newName, { memory: { role: 'repairer' } }); // spawns the creep
         }
 
         // spawning visual text
@@ -77,8 +83,14 @@ module.exports.loop = function() { // infinite loop wow
             if (creep.memory.role == 'builder') {
                 roleBuilder.run(creep);
             }
+            if (creep.memory.role == 'repairer') {
+                roleUpgrader.run(creep); // repairer not needed now
+            }
         }
 
+        //for(var name in Game.rooms) {
+        //    console.log('Room "'+name+'" has '+Game.rooms[name].energyAvailable+' energy');
+        //}
 
         // Tower Defence Code
         var tower = Game.getObjectById('TOWER_ID');
