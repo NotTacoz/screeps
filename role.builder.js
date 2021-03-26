@@ -21,6 +21,8 @@ var roleBuilder = {
                 } else if (creep.build(targets[0]) == ERR_INVALID_TARGET) {
                     console.log("a");
                 }
+            } else if (creep.build(targets[0]) == ERR_INVALID_TARGET) {
+                console.log("a");
             }
         } else {
             var sources = creep.room.find(FIND_SOURCES);
