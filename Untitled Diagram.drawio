@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-03-26T01:27:21.352Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="3qcP_Zmjyg0HonZzrUEl" version="14.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-26T02:21:01.168Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="uOsNzwAnj_qnepVrGtv7" version="14.5.1" type="github">
   <diagram id="GXUMazLMIQt0c8SRPc_A" name="Page-1">
-    <mxGraphModel dx="2310" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1865" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -146,11 +146,20 @@
         <mxCell id="d9rtya8YWrpAKZP6m5c3-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duOF_iW3JtJ72vS7fKCg-44" target="d9rtya8YWrpAKZP6m5c3-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duOF_iW3JtJ72vS7fKCg-44" target="d9rtya8YWrpAKZP6m5c3-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="duOF_iW3JtJ72vS7fKCg-44" value="Is Creep Full?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="160" y="1020" width="80" height="80" as="geometry" />
         </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duOF_iW3JtJ72vS7fKCg-49" target="d9rtya8YWrpAKZP6m5c3-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="duOF_iW3JtJ72vS7fKCg-49" target="d9rtya8YWrpAKZP6m5c3-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="duOF_iW3JtJ72vS7fKCg-49" value="&lt;span&gt;Is Creep Full?&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="710" y="1020" width="80" height="80" as="geometry" />
+          <mxGeometry x="690" y="1020" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="duOF_iW3JtJ72vS7fKCg-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;" parent="1" source="duOF_iW3JtJ72vS7fKCg-56" target="duOF_iW3JtJ72vS7fKCg-58" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -302,8 +311,72 @@
             <mxPoint x="-285" y="1040" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d9rtya8YWrpAKZP6m5c3-2" target="d9rtya8YWrpAKZP6m5c3-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="d9rtya8YWrpAKZP6m5c3-2" value="Find Construction Site" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="290" y="1030" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d9rtya8YWrpAKZP6m5c3-4" target="d9rtya8YWrpAKZP6m5c3-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d9rtya8YWrpAKZP6m5c3-4" target="d9rtya8YWrpAKZP6m5c3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-4" value="Is it In range?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-6" value="Move towards the construction site + draw path" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="1150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-8" value="Build" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="d9rtya8YWrpAKZP6m5c3-8" target="duOF_iW3JtJ72vS7fKCg-44">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="1150" as="sourcePoint" />
+            <mxPoint x="520" y="1100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="500" y="1130" />
+              <mxPoint x="200" y="1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="d9rtya8YWrpAKZP6m5c3-13" target="d9rtya8YWrpAKZP6m5c3-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="65" y="990" />
+              <mxPoint x="160" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d9rtya8YWrpAKZP6m5c3-13" target="d9rtya8YWrpAKZP6m5c3-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-13" value="Is source&lt;br&gt;in range?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="25" y="1020" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-14" value="Move towards the construction site + draw path" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="890" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-15" value="Harvest" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="1150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-17" value="" style="endArrow=classic;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="d9rtya8YWrpAKZP6m5c3-15" target="duOF_iW3JtJ72vS7fKCg-44">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-110" y="1180" as="sourcePoint" />
+            <mxPoint x="-60" y="1130" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="95" y="1120" />
+              <mxPoint x="180" y="1120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-18" value="Find a building with least amount of hits left" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1030" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d9rtya8YWrpAKZP6m5c3-23" value="Is Source In range?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1020" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
