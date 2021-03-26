@@ -19,16 +19,16 @@ var roleBuilder = { // builder role poggers
                 if (creep.build(targets[0]) == ERR_NOT_IN_RANGE) { // try to build
                     creep.moveTo(targets[0]), { visualizePathStyle: { stroke: '#ffffff' } };
                 }
-            } else if (creep.build(targets[0]) == ERR_INVALID_TARGET) {
-                console.log("a");
+            } else if (creep.build(targets[0]) == ERR_INVALID_TARGET) { // if there are no targets
+                console.log("a"); // temp script
             }
         } else {
-            var sources = creep.room.find(FIND_SOURCES);
-            if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
+            var sources = creep.room.find(FIND_SOURCES); // find sources yay
+            if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) { // not in range so sad
                 creep.moveTo(sources[0], { visualizePathStyle: { stroke: '#ffaa00' } });
             }
         }
     }
 };
 
-module.exports = roleBuilder;
+module.exports = roleBuilder; // export

@@ -46,17 +46,17 @@ module.exports.loop = function() { // infinite loop wow
             //console.log('Spawning new harvester: ' + newName); // console logging for utility in general
             Game.spawns['Spawn1'].spawnCreep([WORK, WORK, CARRY, CARRY, MOVE, MOVE], newName, { memory: { role: 'harvester' } }); // spawns the creep
         }
-        if (upgraders.length < 4) { // if there are no more than 2 upgraders.
+        if (upgraders.length < 4) { // if there are no more than 4 upgraders.
             var newName = 'Upgrader' + Game.time; // setting a completely original name for the creep
             //console.log('Spawning new upgrader: ' + newName); // console logging for utility in general
             Game.spawns['Spawn1'].spawnCreep([WORK, WORK, CARRY, CARRY, MOVE, MOVE], newName, { memory: { role: 'upgrader' } }); // spawns the creep
         }
-        if (builders.length < 4) { // if there are no more than 3 builders.
+        if (builders.length < 4) { // if there are no more than 4 builders.
             var newName = 'Builder' + Game.time; // setting a completely original name for the creep
             //console.log('Spawning new builder: ' + newName); // console logging for utility in general
             Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, CARRY, MOVE], newName, { memory: { role: 'builder' } }); // spawns the creep
         }
-        if (repairers.length < 4) { // if there are no more than 2 repairers.
+        if (repairers.length < 4) { // if there are no more than 4 repairers.
             var newName = 'Repairer' + Game.time; // setting a completely original name for the creep
             //console.log('Spawning new builder: ' + newName); // console logging for utility in general
             Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, CARRY, MOVE], newName, { memory: { role: 'repairer' } }); // spawns the creep
@@ -67,24 +67,24 @@ module.exports.loop = function() { // infinite loop wow
             var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name]; // spawning creep name
             Game.spawns['Spawn1'].room.visual.text( // creates a visual text
                 '🛠️' + spawningCreep.memory.role, // emoji for asthetics
-                Game.spawns['Spawn1'].pos.x + 1,
-                Game.spawns['Spawn1'].pos.y, { align: 'left', opacity: 0.8 });
+                Game.spawns['Spawn1'].pos.x + 1, // spawn creep
+                Game.spawns['Spawn1'].pos.y, { align: 'left', opacity: 0.8 }); //spawn
         }
 
         // for each creeps assign a role
-        for (var name in Game.creeps) {
+        for (var name in Game.creeps) { // role assign
             var creep = Game.creeps[name];
-            if (creep.memory.role == 'harvester') {
+            if (creep.memory.role == 'harvester') { // harvester
                 roleHarvester.run(creep);
             }
-            if (creep.memory.role == 'upgrader') {
+            if (creep.memory.role == 'upgrader') { //upgrader
                 roleUpgrader.run(creep);
             }
-            if (creep.memory.role == 'builder') {
-                roleHarvester.run(creep);
+            if (creep.memory.role == 'builder') { //builder currently because nothing is being built
+                roleUpgrader.run(creep);
             }
             if (creep.memory.role == 'repairer') {
-                roleUpgrader.run(creep);
+                roleUpgrader.run(creep); //nothing needs reapir so currently upgraders
             }
         }
 
@@ -93,7 +93,7 @@ module.exports.loop = function() { // infinite loop wow
         //}
 
         // Tower Defence Code
-        var tower = Game.getObjectById('TOWER_ID');
+        var tower = Game.getObjectById('TOWER_ID'); // tower id
         if (tower) {
             var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (structure) => structure.hits < structure.hitsMax
@@ -116,6 +116,6 @@ module.exports.loop = function() { // infinite loop wow
                 Game.spawns[SpawnName].pos.y, { align: 'left', opacity: 0.8 });
         }
     } else {
-        console.log("CPU BUCKET EMPTY " + Game.cpu.bucket + "/100");
+        console.log("CPU BUCKET EMPTY " + Game.cpu.bucket + "/100"); // consoel log if cpu not enough
     }
 }
