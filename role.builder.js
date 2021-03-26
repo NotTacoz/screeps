@@ -14,9 +14,12 @@ var roleBuilder = {
 
         if (creep.memory.building) {
             var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
+            console.log("creep.build(targets[0])");
             if (targets.length) {
                 if (creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets[0], { visualizePathStyle: { stroke: '#ffffff' } });
+                    creep.moveTo(targets[0]), { visualizePathStyle: { stroke: '#ffffff' } };
+                } else if (creep.build(targets[0]) == ERR_INVALID_TARGET) {
+                    console.log("a");
                 }
             }
         } else {

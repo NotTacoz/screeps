@@ -49,14 +49,14 @@ module.exports.loop = function() { // infinite loop wow
         if (upgraders.length < 4) { // if there are no more than 2 upgraders.
             var newName = 'Upgrader' + Game.time; // setting a completely original name for the creep
             //console.log('Spawning new upgrader: ' + newName); // console logging for utility in general
-            Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, CARRY, CARRY, MOVE], newName, { memory: { role: 'upgrader' } }); // spawns the creep
+            Game.spawns['Spawn1'].spawnCreep([WORK, WORK, CARRY, CARRY, MOVE, MOVE], newName, { memory: { role: 'upgrader' } }); // spawns the creep
         }
-        if (builders.length < 3) { // if there are no more than 3 builders.
+        if (builders.length < 4) { // if there are no more than 3 builders.
             var newName = 'Builder' + Game.time; // setting a completely original name for the creep
             //console.log('Spawning new builder: ' + newName); // console logging for utility in general
             Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, CARRY, MOVE], newName, { memory: { role: 'builder' } }); // spawns the creep
         }
-        if (repairers.length < 3) { // if there are no more than 2 repairers.
+        if (repairers.length < 4) { // if there are no more than 2 repairers.
             var newName = 'Repairer' + Game.time; // setting a completely original name for the creep
             //console.log('Spawning new builder: ' + newName); // console logging for utility in general
             Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, CARRY, MOVE], newName, { memory: { role: 'repairer' } }); // spawns the creep
@@ -81,10 +81,10 @@ module.exports.loop = function() { // infinite loop wow
                 roleUpgrader.run(creep);
             }
             if (creep.memory.role == 'builder') {
-                roleBuilder.run(creep);
+                roleHarvester.run(creep);
             }
             if (creep.memory.role == 'repairer') {
-                roleUpgrader.run(creep); // repairer not needed now
+                roleUpgrader.run(creep);
             }
         }
 
@@ -118,4 +118,4 @@ module.exports.loop = function() { // infinite loop wow
     } else {
         console.log("CPU BUCKET EMPTY " + Game.cpu.bucket + "/100");
     }
-};
+}
